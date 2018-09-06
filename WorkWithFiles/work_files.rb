@@ -34,7 +34,7 @@ module WorkFiles
       else
         begin
         File.delete(file_name.to_s)
-        rescue ArgumentError => e
+        rescue StandardError => e
           puts "Filed to delete '#{file_name}' file with the following error: '#{e}'"
           return
         end
