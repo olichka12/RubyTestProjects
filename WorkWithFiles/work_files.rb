@@ -1,15 +1,5 @@
-=begin
-Access to file
-  r  - read only; start
-  r+ - read and write; start
-  w  - write only; start;       recreate
-  w+ - read and write; start    recreate
-  a  - write only; end          add
-  a+ - read, write; end         add
-  b  - binary (windows, dos)
-
-=end
 require 'pry'
+
 module WorkFiles
 
   class Work
@@ -30,7 +20,7 @@ module WorkFiles
         rescue ArgumentError => e
           puts "Got the following error(Argument): '#{e}'"
           puts 'Error to create file'
-          return  #exit
+          return
         rescue StandardError => e
           puts "Got the following error: '#{e}'"
           return
@@ -51,7 +41,7 @@ module WorkFiles
         rescue ArgumentError => e
           puts "Got the following error(Argument): '#{e}'"
           puts 'Error to delete file'
-          return  #exit
+          return
         end
         @@files.delete(file_name.to_sym)
       end
@@ -171,9 +161,23 @@ class Action
     end
     puts 'The end :)'
   end
-end
 
+end
 
 
 act = Action.new
 act.action
+
+
+
+=begin
+Access to file
+  r  - read only; start
+  r+ - read and write; start
+  w  - write only; start;       recreate
+  w+ - read and write; start    recreate
+  a  - write only; end          add
+  a+ - read, write; end         add
+  b  - binary (windows, dos)
+
+=end
