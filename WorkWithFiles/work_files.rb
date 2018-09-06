@@ -18,11 +18,7 @@ module WorkFiles
         begin
         File.new(file_name.to_s, access_right.to_s)
         rescue ArgumentError => e
-          puts "Got the following error(Argument): '#{e}'"
-          puts 'Error to create file'
-          return
-        rescue StandardError => e
-          puts "Got the following error: '#{e}'"
+          puts "Filed to create '#{file_name}' file with the following error: '#{e}'"
           return
         end
         @@files[file_name.to_sym] = access_right.to_sym
@@ -34,13 +30,12 @@ module WorkFiles
 
     def delete(file_name)
       if @@files[file_name.to_sym].nil?
-        puts 'File not exist'
+        puts 'File not exist!'
       else
         begin
         File.delete(file_name.to_s)
         rescue ArgumentError => e
-          puts "Got the following error(Argument): '#{e}'"
-          puts 'Error to delete file'
+          puts "Filed to delete '#{file_name}' file with the following error: '#{e}'"
           return
         end
         @@files.delete(file_name.to_sym)
@@ -50,12 +45,12 @@ module WorkFiles
 
     def rename(file_name, new_file_name)
       if @@files[file_name.to_sym].nil?
-        puts 'File not exist'
+        puts 'File not exist!'
       else
         begin
         File.rename(file_name.to_s, new_file_name.to_s)
         rescue ArgumentError => e
-          puts "Got the following error(Argument): '#{e}'"
+          puts "Failed to rename '#{file_name}' file with the following error: '#{e}'"
           return
         end
         @@files[new_file_name.to_sym] = @@files.delete(file_name.to_sym)
@@ -65,7 +60,7 @@ module WorkFiles
 
     def manipulation_with_file(file_name, access_right, write_lines = '') #read, write file
       if @@files[file_name.to_sym].nil?
-        puts 'File not exist'
+        puts 'File not exist!'
       else
         begin
           case access_right
@@ -78,11 +73,10 @@ module WorkFiles
             File.open(file_name.to_s, 'r').each {|line| puts line}
           end
         rescue ArgumentError => e
-          puts "Got the following error(Argument): '#{e}'"
-          #puts "Error open #{file_name}"
+          puts "Filed to open '#{file_name}' file with the following error: '#{e}'"
           return
         rescue IOError => e
-          puts "Got the following error(IO): '#{e}'"
+          puts "Filed to open '#{file_name}' file with the following error: '#{e}'"
           return
         end
       end
@@ -115,7 +109,7 @@ class Action
         @choose_operation = gets.chomp
         @choose_operation = Integer(@choose_operation)
       rescue ArgumentError => e
-        puts "Got the following error(Argument): '#{e}'"
+        puts "Got the following error: '#{e}'"
         puts 'Please enter integer number: '
         retry
       end
