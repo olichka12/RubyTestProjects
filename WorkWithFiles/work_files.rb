@@ -159,8 +159,8 @@ class Action
 end
 
 
-act = Action.new
-act.action
+#act = Action.new
+#act.action
 
 
 
