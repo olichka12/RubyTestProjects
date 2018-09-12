@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9b948888-506b-4438-9657-620b4fba9efc" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WFile_class_Manipulation_with_file__write_file_with__a__right_access_and_default_text__WorkWithFiles.rcov" NAME="Testing WFile class Manipulation with file: write file with 'a' right access and default text: WorkWithFiles Coverage Results" MODIFIED="1536753882818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module__Output_information_about_created_files_if___WorkWithFiles.rcov" NAME="Testing WorkFiles module #Output information about created files if:: WorkWithFiles Coverage Results" MODIFIED="1536677321898" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module_Output_information_about_created_files_if___WorkWithFiles.rcov" NAME="Testing WorkFiles module Output information about created files if:: WorkWithFiles Coverage Results" MODIFIED="1536676928599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module__Creation__new_file_with__r__right_access__WorkWithFiles.rcov" NAME="Testing WorkFiles module #Creation: new file with 'r' right access: WorkWithFiles Coverage Results" MODIFIED="1536679666332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WFile_class_Manipulation_with_file__write_file_with__a__right_access_and_text___word___WorkWithFiles.rcov" NAME="Testing WFile class Manipulation with file: write file with 'a' right access and text ' word': WorkWithFiles Coverage Results" MODIFIED="1536759323228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WFile_class_Manipulation_with_file__f__WorkWithFiles.rcov" NAME="Testing WFile class Manipulation with file: f: WorkWithFiles Coverage Results" MODIFIED="1536759792468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WFile_class__Creation___WorkWithFiles.rcov" NAME="Testing WFile class #Creation:: WorkWithFiles Coverage Results" MODIFIED="1536751373226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module__Renaming_file__rename_not_exists_file__WorkWithFiles.rcov" NAME="Testing WorkFiles module #Renaming file: rename not exists file: WorkWithFiles Coverage Results" MODIFIED="1536675198951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module__Creation___WorkWithFiles.rcov" NAME="Testing WorkFiles module #Creation:: WorkWithFiles Coverage Results" MODIFIED="1536676143535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module__Creation__new_file__WorkWithFiles.rcov" NAME="Testing WorkFiles module #Creation: new file: WorkWithFiles Coverage Results" MODIFIED="1536676227836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module__Creation__new_file_with_wrong_right_access__WorkWithFiles.rcov" NAME="Testing WorkFiles module #Creation: new file with wrong right access: WorkWithFiles Coverage Results" MODIFIED="1536677389861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module__WorkWithFiles.rcov" NAME="Testing WorkFiles module: WorkWithFiles Coverage Results" MODIFIED="1536749317534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module__Creation_of_file__existing_file__WorkWithFiles.rcov" NAME="Testing WorkFiles module #Creation of file: existing file: WorkWithFiles Coverage Results" MODIFIED="1536675018368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module__Deleting___WorkWithFiles.rcov" NAME="Testing WorkFiles module #Deleting:: WorkWithFiles Coverage Results" MODIFIED="1536678740764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WFile_class_Manipulation_with_file__write_file_with__a___right_access_and_default_text__WorkWithFiles.rcov" NAME="Testing WFile class Manipulation with file: write file with 'a+' right access and default text: WorkWithFiles Coverage Results" MODIFIED="1536753840286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module_Renaming_file___WorkWithFiles.rcov" NAME="Testing WorkFiles module Renaming file:: WorkWithFiles Coverage Results" MODIFIED="1536669553520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WFile_class_Manipulation_with_file__read_file_with__WorkWithFiles.rcov" NAME="Testing WFile class Manipulation with file: read file with: WorkWithFiles Coverage Results" MODIFIED="1536760233152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WFile_class__Creation__new_file_without_right_access__WorkWithFiles.rcov" NAME="Testing WFile class #Creation: new file without right access: WorkWithFiles Coverage Results" MODIFIED="1536751419393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WFile_class__Output_information_about_created_files_if__exist_2_files__WorkWithFiles.rcov" NAME="Testing WFile class #Output information about created files if: exist 2 files: WorkWithFiles Coverage Results" MODIFIED="1536759384862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@test.rcov" NAME="test Coverage Results" MODIFIED="1535985167489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@work_files.rcov" NAME="work_files Coverage Results" MODIFIED="1536759984700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module__Output_information_about_created_files_if__exist_2_files__WorkWithFiles.rcov" NAME="Testing WorkFiles module #Output information about created files if: exist 2 files: WorkWithFiles Coverage Results" MODIFIED="1536679701916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module_Renaming_file__rename_exists_file__WorkWithFiles.rcov" NAME="Testing WorkFiles module Renaming file: rename exists file: WorkWithFiles Coverage Results" MODIFIED="1536670138682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module__Renaming_file___WorkWithFiles.rcov" NAME="Testing WorkFiles module #Renaming file:: WorkWithFiles Coverage Results" MODIFIED="1536675205462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WFile_class_Manipulation_with_file__read_file_with_wrong_right_access__WorkWithFiles.rcov" NAME="Testing WFile class Manipulation with file: read file with wrong right access: WorkWithFiles Coverage Results" MODIFIED="1536760111592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module__Creation_of_file___WorkWithFiles.rcov" NAME="Testing WorkFiles module #Creation of file:: WorkWithFiles Coverage Results" MODIFIED="1536674992261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WFile_class__WorkWithFiles.rcov" NAME="Testing WFile class: WorkWithFiles Coverage Results" MODIFIED="1536764566279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WFile_class_Manipulation_with_file___WorkWithFiles.rcov" NAME="Testing WFile class Manipulation with file:: WorkWithFiles Coverage Results" MODIFIED="1536758608081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module__Renaming___WorkWithFiles.rcov" NAME="Testing WorkFiles module #Renaming:: WorkWithFiles Coverage Results" MODIFIED="1536676161763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WFile_class__Creation__new_file_with__r__right_access__WorkWithFiles.rcov" NAME="Testing WFile class #Creation: new file with 'r' right access: WorkWithFiles Coverage Results" MODIFIED="1536751048190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module__Creation__existing_file__WorkWithFiles.rcov" NAME="Testing WorkFiles module #Creation: existing file: WorkWithFiles Coverage Results" MODIFIED="1536676050391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@Testing_WorkFiles_module__Renaming_file__rename_exists_file__WorkWithFiles.rcov" NAME="Testing WorkFiles module #Renaming file: rename exists file: WorkWithFiles Coverage Results" MODIFIED="1536673819845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" MODULE_NAME="WorkWithFiles" />
+    <SUITE FILE_PATH="coverage/WorkWithFiles@files.rcov" NAME="files Coverage Results" MODIFIED="1536745938838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WorkWithFiles" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/work_files.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1185">
+              <caret line="79" column="1" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/files.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/test_work_files_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Test_file.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="WorkWithFiles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WorkWithFiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WorkWithFiles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WorkWithFiles" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="WorkWithFiles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="WorkWithFiles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="test_work_files_spec" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$/test" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/test/test_work_files_spec.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Ruby.test_work_files_spec" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="86f40e80-b6da-4ce0-a04f-942ae8c1e0a0" name="Default Changelist" comment="" />
+      <created>1535964370288</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1535964370288</updated>
+      <workItem from="1535964373512" duration="21158000" />
+      <workItem from="1536045821374" duration="1588000" />
+      <workItem from="1536135564227" duration="13575000" />
+      <workItem from="1536228121877" duration="739000" />
+      <workItem from="1536243729739" duration="2074000" />
+      <workItem from="1536666495481" duration="12620000" />
+      <workItem from="1536738275693" duration="18367000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="54000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="82" y="50" width="1349" height="937" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28156084" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32938388" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26540285" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32938388" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/testssss.txt" />
+    <entry file="file://$PROJECT_DIR$/w.txt" />
+    <entry file="file://$PROJECT_DIR$/test.rb" />
+    <entry file="file://$PROJECT_DIR$/write.txt" />
+    <entry file="file://$PROJECT_DIR$/test/files.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test_file.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work_files.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="79" column="1" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test_work_files_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
