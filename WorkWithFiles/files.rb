@@ -8,7 +8,6 @@ class WFile
     @@files.each {|file, access| puts "#{file}: #{access}"}
   end
 
-
   def create (file_name, access_right = 'w') #w, w+, a, a+
     if @@files[file_name.to_sym].nil?
       begin
@@ -22,7 +21,6 @@ class WFile
       puts 'File is exist!'
     end
   end
-
 
   def delete(file_name)
     if @@files[file_name.to_sym].nil?
@@ -38,21 +36,19 @@ class WFile
     end
   end
 
-
   def rename(file_name, new_file_name)
     if @@files[file_name.to_sym].nil?
       puts 'File not exist!'
     else
-      begin
-        File.rename(file_name.to_s, new_file_name.to_s)
+    begin
+      File.rename(file_name.to_s, new_file_name.to_s)
       rescue ArgumentError => e
         puts "Failed to rename '#{file_name}' file with the following error: '#{e}'"
         return
-      end
-      @@files[new_file_name.to_sym] = @@files.delete(file_name.to_sym)
+    end
+    @@files[new_file_name.to_sym] = @@files.delete(file_name.to_sym)
     end
   end
-
 
   def manipulation_with_file(file_name, access_right, write_lines = '') #read, write file
     if @@files[file_name.to_sym].nil?
@@ -79,5 +75,4 @@ class WFile
       end
     end
   end
-
 end
