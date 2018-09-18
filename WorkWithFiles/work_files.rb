@@ -1,4 +1,4 @@
-load 'files.rb'
+load '../WorkWithFiles/features/CucumberProject/code/files'
 
 class Action
 

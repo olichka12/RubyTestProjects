@@ -1,5 +1,5 @@
 require 'rspec'
-require '../files'
+require '../../WorkWithFiles/features/CucumberProject/code/files'
 
 describe 'Testing WFile class' do
 
@@ -14,10 +14,10 @@ describe 'Testing WFile class' do
   EMPTY_LINE = ''
 
   WRONG_RIGHT_ACCESS = 'e'
-  ERROR_FILE_EXIST = 'File is exist!'
-  ERROR_FILE_NOT_EXIST = 'File not exist!'
+  ERROR_FILE_EXIST = 'File exists!'
+  ERROR_FILE_NOT_EXIST = 'File not exists!'
   ERROR_RIGHT_ACCESS = 'Wrong right access'
-  ERROR_CREATE_FILE = "Filed to create '#{FILE_NAME}' file with the following error: "
+  ERROR_CREATE_FILE = "Failed to create '#{FILE_NAME}' file with the following error: "
 
   def output_information_about_file (file_name)
     "#{file_name}: w"

@@ -13,23 +13,23 @@ class WFile
       begin
         File.new(file_name.to_s, access_right.to_s)
       rescue StandardError => e
-        puts "Filed to create '#{file_name}' file with the following error: '#{e}'"
+        puts "Failed to create '#{file_name}' file with the following error: '#{e}'"
         return
       end
       @@files[file_name.to_sym] = access_right.to_sym
     else
-      puts 'File is exist!'
+      puts 'File exists!'
     end
   end
 
   def delete(file_name)
     if @@files[file_name.to_sym].nil?
-      puts 'File not exist!'
+      puts 'File not exists!'
     else
       begin
         File.delete(file_name.to_s)
       rescue StandardError => e
-        puts "Filed to delete '#{file_name}' file with the following error: '#{e}'"
+        puts "Failed to delete '#{file_name}' file with the following error: '#{e}'"
         return
       end
       @@files.delete(file_name.to_sym)
@@ -38,21 +38,21 @@ class WFile
 
   def rename(file_name, new_file_name)
     if @@files[file_name.to_sym].nil?
-      puts 'File not exist!'
+      puts 'File not exists!'
     else
-    begin
-      File.rename(file_name.to_s, new_file_name.to_s)
+      begin
+        File.rename(file_name.to_s, new_file_name.to_s)
       rescue ArgumentError => e
         puts "Failed to rename '#{file_name}' file with the following error: '#{e}'"
         return
-    end
-    @@files[new_file_name.to_sym] = @@files.delete(file_name.to_sym)
+      end
+      @@files[new_file_name.to_sym] = @@files.delete(file_name.to_sym)
     end
   end
 
   def manipulation_with_file(file_name, access_right, write_lines = '') #read, write file
     if @@files[file_name.to_sym].nil?
-      puts 'File not exist!'
+      puts 'File not exists!'
     else
       begin
         case access_right
@@ -67,10 +67,10 @@ class WFile
         else puts 'Wrong right access'
         end
       rescue ArgumentError => e
-        puts "Filed to open '#{file_name}' file with the following error: '#{e}'"
+        puts "Failed to open '#{file_name}' file with the following error: '#{e}'"
         return
       rescue IOError => e
-        puts "Filed to open '#{file_name}' file with the following error: '#{e}'"
+        puts "Failed to open '#{file_name}' file with the following error: '#{e}'"
         return
       end
     end
