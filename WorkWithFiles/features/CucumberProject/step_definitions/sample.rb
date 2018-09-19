@@ -89,15 +89,15 @@ Then /^file was not deleted$/ do
   expect(output_information).to eq ERROR_FILE_NOT_EXIST
 end
 
-Then /^file with right was created$/ do
+Then /^file with (.*) right access was created$/ do |access|
   expect(File.exist?(FILE_NAME)).to be
 end
 
-Then /^file with right was not created$/ do
+Then /^file with (.*) right access was not created$/ do |access|
   expect(output_information).to include(ERROR_CREATE_FILE)
 end
 
-Then /^existing file with right was not created$/ do
+Then /^existing file with (.*) right access was not created$/ do |access|
   expect(output_information).to include(ERROR_FILE_EXIST)
 end
 

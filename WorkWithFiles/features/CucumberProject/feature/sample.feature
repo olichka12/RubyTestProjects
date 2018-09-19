@@ -22,7 +22,7 @@ Feature: files
 
   Scenario Outline: Create a file
     When I create file with <Access> right access
-    Then file with right was created
+    Then file with <Access> right access was created
     Examples:
       |Access   |
       |w        |
@@ -33,7 +33,7 @@ Feature: files
 
   Scenario Outline: Create a file
     When I create file with <Access> right access
-    Then file with right was not created
+    Then file with <Access> right access was not created
     Examples:
       |Access   |
       |r        |
@@ -42,7 +42,7 @@ Feature: files
   Scenario Outline: Create a file existing
     Given I have a file
     When I create file with <Access> right access
-    Then existing file with right was not created
+    Then existing file with <Access> right access was not created
     Examples:
       | Access   |
       | default  |
