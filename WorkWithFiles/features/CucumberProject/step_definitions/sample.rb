@@ -59,12 +59,6 @@ When /^I write default text in to file with (.*) right access$/ do |access|
   @file.manipulation_with_file(FILE_NAME, access)
 end
 
-#When /^I read a file I see the result$/ do
-#  @file.manipulation_with_file(FILE_NAME, R_RIGHT_ACCESS)
- # expect(output_information).to eq DEFAULT_LINE_FILE[0]
-#end
-#####################################################################################
-
 When /^I read a file$/ do
   @file.manipulation_with_file(FILE_NAME, R_RIGHT_ACCESS)
 end
