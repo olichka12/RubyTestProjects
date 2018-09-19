@@ -1,4 +1,4 @@
-load 'files.rb'
+load 'features/CucumberProject/code/files.rb'
 
 class Action
 
@@ -76,21 +76,3 @@ class Action
     @file.manipulation_with_file(file_name, access_right, text) unless text.empty?
   end
 end
-
-
-#act = Action.new
-#act.action
-
-
-
-=begin
-Access to file
-  r  - read only; start
-  r+ - read and write; start
-  w  - write only; start;       recreate
-  w+ - read and write; start    recreate
-  a  - write only; end          add
-  a+ - read, write; end         add
-  b  - binary (windows, dos)
-
-=end
