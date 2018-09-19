@@ -1,27 +1,8 @@
 require 'rspec'
 require '../../WorkWithFiles/features/CucumberProject/code/files'
+require '../data'
 
 describe 'Testing WFile class' do
-
-  FILE_NAME = 'test1.txt'
-  NEW_FILE_NAME = 'test2.txt'
-  R_RIGHT_ACCESS = 'r'
-  W_RIGHT_ACCESS = 'w'
-  W_UP_RIGHT_ACCESS = 'w+'
-  A_RIGHT_ACCESS = 'a'
-  A_UP_RIGHT_ACCESS = 'a+'
-  DEFAULT_LINE_FILE = %w(Hello word)
-  EMPTY_LINE = ''
-
-  WRONG_RIGHT_ACCESS = 'e'
-  ERROR_FILE_EXIST = 'File exists!'
-  ERROR_FILE_NOT_EXIST = 'File not exists!'
-  ERROR_RIGHT_ACCESS = 'Wrong right access'
-  ERROR_CREATE_FILE = "Failed to create '#{FILE_NAME}' file with the following error: "
-
-  def output_information_about_file (file_name)
-    "#{file_name}: w"
-  end
 
   def output_information
     $stdout.rewind

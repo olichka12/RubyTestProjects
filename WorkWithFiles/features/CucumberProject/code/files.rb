@@ -1,5 +1,6 @@
-class WFile
+require_relative '../../../data'
 
+class WFile
   def initialize
     @@files = {}
   end
@@ -13,23 +14,23 @@ class WFile
       begin
         File.new(file_name.to_s, access_right.to_s)
       rescue StandardError => e
-        puts "Failed to create '#{file_name}' file with the following error: '#{e}'"
+        puts output_error_create_file(file_name, e)
         return
       end
       @@files[file_name.to_sym] = access_right.to_sym
     else
-      puts 'File exists!'
+      puts ERROR_FILE_EXIST
     end
   end
 
   def delete(file_name)
     if @@files[file_name.to_sym].nil?
-      puts 'File not exists!'
+      puts ERROR_FILE_NOT_EXIST
     else
       begin
         File.delete(file_name.to_s)
       rescue StandardError => e
-        puts "Failed to delete '#{file_name}' file with the following error: '#{e}'"
+        puts output_error_delete_file(file_name, e)
         return
       end
       @@files.delete(file_name.to_sym)
@@ -38,12 +39,12 @@ class WFile
 
   def rename(file_name, new_file_name)
     if @@files[file_name.to_sym].nil?
-      puts 'File not exists!'
+      puts ERROR_FILE_NOT_EXIST
     else
       begin
         File.rename(file_name.to_s, new_file_name.to_s)
       rescue ArgumentError => e
-        puts "Failed to rename '#{file_name}' file with the following error: '#{e}'"
+        puts output_error_rename_file(file_name, e)
         return
       end
       @@files[new_file_name.to_sym] = @@files.delete(file_name.to_sym)
@@ -52,7 +53,7 @@ class WFile
 
   def manipulation_with_file(file_name, access_right, write_lines = '') #read, write file
     if @@files[file_name.to_sym].nil?
-      puts 'File not exists!'
+      puts ERROR_FILE_NOT_EXIST
     else
       begin
         case access_right
@@ -64,13 +65,13 @@ class WFile
         when 'r+' , 'w+' , 'a+'  # Write and output text with access right - r+, w+, a+
           File.open(file_name.to_s, access_right.to_s) {|line| line.puts write_lines.to_s} #unless write_lines.empty?
           File.open(file_name.to_s, 'r').each {|line| puts line}
-        else puts 'Wrong right access'
+        else puts ERROR_RIGHT_ACCESS
         end
       rescue ArgumentError => e
-        puts "Failed to open '#{file_name}' file with the following error: '#{e}'"
+        puts output_error_open_file(file_name, e)
         return
       rescue IOError => e
-        puts "Failed to open '#{file_name}' file with the following error: '#{e}'"
+        puts output_error_open_file(file_name, e)
         return
       end
     end
