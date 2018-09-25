@@ -3,16 +3,21 @@ require_relative '../../SeleniumProject/Data/Data'
 #require_relative 'HeadComponentPage'
 
 class Application
-  def self.get
-    @driver = Selenium::WebDriver.for(:safari)
-    @driver.manage.window.maximize
-    @driver.get URL
+  class << self
+    def driver
+      @driver ||= Selenium::WebDriver.for(:safari)
+    end
 
-    @driver
-    #HeadComponentPage.new(@driver)
-  end
+    def get_url(url)
+      @driver.get url
+    end
 
-  def self.quit_application
-    @driver.quit
+    def manage
+      @driver.manage.window.maximize
+    end
+
+    def quit_application
+      @driver.quit
+    end
   end
 end

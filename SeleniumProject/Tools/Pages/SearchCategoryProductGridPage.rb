@@ -6,20 +6,20 @@ class SearchCategoryProductGridPage < HeadComponentPage
   FILTER_PRICE_EXPENSIVE = {xpath: "//ul[@class='dropdown-menu sorting__menu']//li//a[contains(text(), 'за ціною (спочатку дорогі)')]"}
   PAGINATION = {class: 'pagination__list'}
   LAST_NUMBER_PAGES = {xpath: "//ul[@class='pagination__list']//li[last()]"}
-  #PAGINATION_LIST = {xpath: "//ul[@class='pagination__list']//li//a[contains(text(),'#{@count}')]"}
-  #PRODUCT_CATEGORY_PRICE = {xpath: "//div[@class='tab-pane fade in active']/section[#{@product_number}]//section/article//a/../following-sibling::span[@class='prise_description_product-point']"}
+  #PAGINATION_LIST =
+  # PAGINATION_LIST =
   PRODUCT_CATEGORY_AMOUNT = {class: 'product-point'}
 
-
-  #PRODUCT_CART = {xpath: "//div[@class='tab-pane fade in active']/section[#{@product_number}]//section/article//a/../following-sibling::button[@class='to_cart btn_list_product-point ']"}
-  #PRODUCT_PRICE = {xpath: "//div[@class='tab-pane fade in active']/section[#{@product_number}]//section/article//a/../following-sibling::span[@class='prise_description_product-point']"}
-  #PRODUCT_NAME = {xpath: "//div[@class='tab-pane fade in active']/section[#{@product_number}]//section/article//a"}
+  PAGINATION_LIST = {class: 'pagination__link'}
+  PRODUCT_CART = {class: 'to_cart btn_list_product-point '}
+  PRODUCT_PRICE = {class: 'prise_description_product-point'}
+  PRODUCT_NAME = {xpath: "//article[@class='caption_description_product-point']//a"}
   CART = {class: 'icon-cart'}
 
   attr_reader :driver
 
-  def initialize(driver)
-    @driver = driver
+  def initialize
+    @driver = Application.driver
   end
 
   def is_category_product
@@ -35,56 +35,47 @@ class SearchCategoryProductGridPage < HeadComponentPage
     sleep(IMPLICIT_WAIT)
   end
 
-  def select_filter_price_cheaper
+  def select_filter_price(cheap_or_expensive)
     filter_price_click
-    @driver.find_element(FILTER_PRICE_CHEAPER).click
+    cheap_or_expensive == :cheap ? @driver.find_element(FILTER_PRICE_CHEAPER).click : @driver.find_element(FILTER_PRICE_EXPENSIVE).click
+    sleep(IMPLICIT_WAIT)
   end
 
-  def select_filter_price_expensive
-    filter_price_click
-    @driver.find_element(FILTER_PRICE_EXPENSIVE).click
-  end
-
-  def get_last_number_page
+  def last_number_page
     @driver.find_element(LAST_NUMBER_PAGES).text.to_i
   end
 
+  def pagination_to_page(page)
+    @driver.find_elements(PAGINATION_LIST).select {|pagination| pagination.attribute('text') == "'#{page}'"}
+  end
+
   def pagination_list_click(page)
-    #@count = page
-    #@driver.find_element(PAGINATION_LIST).click
-    @driver.find_element(:xpath, "//ul[@class='pagination__list']//li//a[contains(text(),'#{page}')]").click
+    # @driver.find_element(tag_name: 'a').select { |el| el.attribute('title') == search_asd }
+
+    #pagination_to_page(page)[0].click
+
+
+    @driver.find_element(:xpath, "//ul[@class='pagination__list']//a[contains(text(),'#{page}')]").click
+    sleep(IMPLICIT_WAIT)
   end
 
-  def get_product_category_amount
+  def product_category_amount
     @driver.find_elements(PRODUCT_CATEGORY_AMOUNT).count
-  end
-
-  def get_product_category_price(product_number)
-    #@product_number = product_number
-    #@driver.find_element(PRODUCT_CATEGORY_PRICE).text.delete("^0-9").to_i
-    @driver.find_element(:xpath, "//div[@class='tab-pane fade in active']/section[#{product_number}]//section/article//a/../following-sibling::span[@class='prise_description_product-point']").text.delete("^0-9").to_i
   end
 
   def add_to_cart(product_number)
     if is_category_product
-      #@product_number = product_number
-      #@driver.find_element(PRODUCT_CART).click
-      @driver.find_element(:xpath, "//div[@class='tab-pane fade in active']/section[#{product_number}]//section/article//a/../following-sibling::button[@class='to_cart btn_list_product-point ']").click
+      @driver.find_elements(PRODUCT_CART)[product_number - 1].click
       sleep(IMPLICIT_WAIT)
     end
   end
 
-  def get_product_name(product_number)
-    #@product_number = product_number
-    #@driver.find_element(PRODUCT_NAME).text
-    @driver.find_element(:xpath, "//div[@class='tab-pane fade in active']/section[#{product_number}]//section/article//a").text
-
+  def product_name(product_number)
+    @driver.find_elements(PRODUCT_NAME)[product_number - 1].text
   end
 
-  def get_product_price(product_number)
-    #@product_number = product_number
-    #@driver.find_element(PRODUCT_PRICE).text.delete("^0-9").to_i
-    @driver.find_element(:xpath, "//div[@class='tab-pane fade in active']/section[#{product_number}]//section/article//a/../following-sibling::span[@class='prise_description_product-point']").text.delete("^0-9").to_i
+  def product_price(product_number)
+    @driver.find_elements(PRODUCT_PRICE)[product_number - 1].text.delete("^0-9").to_i
   end
 
   def cart_click
@@ -93,60 +84,45 @@ class SearchCategoryProductGridPage < HeadComponentPage
     #CartProductPage.new(@driver)
   end
 
-  def check_add_to_cart(product_number)
-    count = get_cart_quantity
+  def check_add_to_cart?(product_number)
+    product_count_primary = cart_quantity
     add_to_cart(product_number)
-    get_cart_quantity == count+1
+    cart_quantity == product_count_primary + 1
   end
 
-  def check_sort_by_price_cheaper
-    select_filter_price_cheaper
-    if is_category_product
-      if is_pagination_list
-        with_pagination(:cheap)
-      else
-        without_pagination(:cheap)
-      end
-    end
-  end
-
-  def check_sort_by_price_expensive
-    select_filter_price_expensive
-    if is_category_product
-      if is_pagination_list
-        with_pagination(:expensive)
-      else
-        without_pagination(:expensive)
-      end
-    end
+  def check_sort_by_price?(cheap_or_expensive)
+    select_filter_price(cheap_or_expensive)
+    is_category_product ? pagination_I_need(cheap_or_expensive) : nil
   end
 
   private
+  def pagination_I_need(criterion)
+    is_pagination_list ? with_pagination(criterion) : without_pagination(criterion)
+  end
+
   def with_pagination(criterion)
-    @check = true
-    (1..get_last_number_page).each do |i|
+    (1..last_number_page).each do |i|
       sleep(IMPLICIT_WAIT)
-      @check = false unless without_pagination(criterion)
-      pagination_list_click(i+1) if i < get_last_number_page
+      return  false unless without_pagination(criterion)
+      pagination_list_click(i+1) if i < last_number_page
     end
-    @check
+    true
   end
 
   def without_pagination(criterion)
-    @check = true
-    price = get_product_category_price(1)
-    (2..get_product_category_amount).each do |j|
-      @check = false unless check_by_criterion(criterion, price, j)
-      price = get_product_category_price(j)
+    price = product_price(1)
+    (2..product_category_amount).each do |j|
+      return false unless check_by_criterion(criterion, price, j)
+      price = product_price(j)
     end
-    @check
+    true
   end
 
   def check_by_criterion(criterion, price, product_number)
     if criterion == :cheap
-      get_product_category_price(product_number) >= price
+      product_price(product_number) >= price
     elsif criterion == :expensive
-      get_product_category_price(product_number) <= price
+      product_price(product_number) <= price
     end
   end
 end

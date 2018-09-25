@@ -15,8 +15,8 @@ class HeadComponentPage
 
   attr_reader :driver
 
-  def initialize(driver)
-    @driver = driver
+  def initialize
+    @driver = Application.driver
   end
 
   def search_input_click
@@ -46,7 +46,7 @@ class HeadComponentPage
     sleep(IMPLICIT_WAIT)
   end
 
-  def get_compare_quantity
+  def compare_quantity
     @driver.find_element(COMPARE_QUANTITY).text.to_i
   end
 
@@ -55,7 +55,7 @@ class HeadComponentPage
     sleep(IMPLICIT_WAIT)
   end
 
-  def get_cart_quantity
+  def cart_quantity
     @driver.find_element(CART_QUANTITY).text.to_i
   end
 
