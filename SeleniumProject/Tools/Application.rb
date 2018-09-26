@@ -1,6 +1,6 @@
 require 'selenium-webdriver'
 require_relative '../../SeleniumProject/Data/Data'
-#require_relative 'HeadComponentPage'
+require_relative '../../SeleniumProject/Tools/Pages/HeadComponentPage'
 
 class Application
   class << self
@@ -14,6 +14,10 @@ class Application
 
     def manage
       @driver.manage.window.maximize
+    end
+
+    def get
+      HeadComponentPage.new
     end
 
     def quit_application

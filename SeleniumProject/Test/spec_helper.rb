@@ -1,0 +1,7 @@
+require_relative '../Tools/Application'
+require_relative '../../SeleniumProject/Data/Data'
+require_relative '../../SeleniumProject/Tools/Pages/HeadComponentPage'
+require_relative '../../SeleniumProject/Tools/Pages/SearchProductGridPage'
+require_relative '../../SeleniumProject/Tools/Pages/SearchCategoryProductGridPage'
+require_relative '../../SeleniumProject/Tools/Pages/SearchFirmPage'
+require_relative '../../SeleniumProject/Tools/Pages/CartProductPage'

@@ -8,8 +8,8 @@ class HeadComponentPage
   CART = {class: 'icon-cart'}
   CART_QUANTITY = {id: 'cart-quantity'}
   CELL = {class: 'cell'}
-  ARTICLE = {xpath: "//ul[@class='main-nav__list']//li//a[contains(text(),'Статті')]"}
-  DELIVERY = {xpath: "//ul[@class='main-nav__list']//li//a[contains(text(),'Доставка')]"}
+  ARTICLE = {xpath: "//a[contains(text(),'Статті')]"}
+  DELIVERY = {xpath: "//a[contains(text(),'Доставка')]"}
 
   IMPLICIT_WAIT = 3
 
@@ -53,6 +53,7 @@ class HeadComponentPage
   def cart_click
     @driver.find_element(CART).click
     sleep(IMPLICIT_WAIT)
+    CartProductPage.new
   end
 
   def cart_quantity
@@ -82,7 +83,7 @@ class HeadComponentPage
     search_input_send_keys(search_product)
     search_button_click
     sleep(IMPLICIT_WAIT)
-    #SearchProductGridPage.new(@driver)
+    SearchProductGridPage.new
   end
 
   def search_category_product(search_category_product)
@@ -91,7 +92,7 @@ class HeadComponentPage
     search_input_send_keys(search_category_product)
     search_button_click
     sleep(IMPLICIT_WAIT)
-    #SearchCategoryProductGridPage.new(@driver)
+    SearchCategoryProductGridPage.new
   end
 
   def search_firm_product(search_firm_product)
@@ -100,6 +101,6 @@ class HeadComponentPage
     search_input_send_keys(search_firm_product)
     search_button_click
     sleep(IMPLICIT_WAIT)
-    #SearchFirmPage.new(@driver)
+    SearchFirmPage.new
   end
 end

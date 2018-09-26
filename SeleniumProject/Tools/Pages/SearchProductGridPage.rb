@@ -1,11 +1,10 @@
 class SearchProductGridPage < HeadComponentPage
   DROPDOWN = {class: 'fa fa-angle-down drop_caret'}
   DROPDOWN_CATEGORY = {class: 'item__drop-category'}
-  SHOW_COUNT = {xpath: "//div[@class='quantity']"}
   AMOUNT_ALL_PRODUCTS = {xpath: "//div[@class = 'quantity']"}
-  AMOUNT_PRODUCTS_PAGE = {xpath: "//section[contains(@class,'product-point_grid col-lg-3 col-md-3 col-sm-3 col-xs-3 ')]"}
+  AMOUNT_PRODUCTS_PAGE = {class: 'product-point_grid col-lg-3 col-md-3 col-sm-3 col-xs-3 '}
   LAST_NUMBER_PAGES = {xpath: "//ul[@class='pagination__list']//li[last()]"}
-  #PAGINATION_LIST =
+  PAGINATION_LIST = {class: 'pagination__link'}
   PRODUCT_GRID = {id: 'grid'}
 
   attr_accessor :count
@@ -24,7 +23,7 @@ class SearchProductGridPage < HeadComponentPage
     sleep(IMPLICIT_WAIT)
     dropdown_category(dropdown_categ)[0].click
     sleep(IMPLICIT_WAIT)
-    #SearchProductGridPage.new(driver)
+    SearchProductGridPage.new
   end
 
   def amount_products
@@ -40,9 +39,9 @@ class SearchProductGridPage < HeadComponentPage
   end
 
   def pagination_list_click(page)
-    #@count = page
-    #@driver.find_element(PAGINATION_LIST).click
-    @driver.find_element(:xpath, "//ul[@class='pagination__list']//li//a[contains(text(),'#{page}')]").click
+    pagination_to_page(page)[0].click
+    sleep(IMPLICIT_WAIT)
+    SearchProductGridPage.new
   end
 
   def is_product
@@ -61,5 +60,10 @@ class SearchProductGridPage < HeadComponentPage
       end
       @amount_products
     end
+  end
+
+  private
+  def pagination_to_page(page)
+    @driver.find_elements(PAGINATION_LIST).select {|pagination| pagination.attribute('text') == page.to_s }
   end
 end

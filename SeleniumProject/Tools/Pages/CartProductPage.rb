@@ -2,7 +2,7 @@ class CartProductPage < HeadComponentPage
 
   PRODUCT = {xpath: "//p[@class='cart__name_goods  cart__point']//a"}
   TOTAL_PRICE = {class: 'wrap_general-total__num total_cart_amount'}
-  #DELETE_PRODUCT = {xpath: "//section[@class='cart_goods cart-item-line']//article//p//a[contains(text(), '#{@product_name}')]/../../../button[@class='cart__delete']"}
+  DELETE_PRODUCT = {class: 'cart__delete'}
 
   attr_reader :driver
 
@@ -14,15 +14,18 @@ class CartProductPage < HeadComponentPage
     @driver.find_element(TOTAL_PRICE).text.to_i
   end
 
-  def check_existing_product?(product_name)
+  def check_existing_name?(product_name)
     product_by_name(product_name)[0].enabled?
   end
 
+  def check_existing_product?(product_name_price)
+    product_by_name(product_name_price[0])[0].enabled? && check_total_price?(product_name_price[1])
+  end
+
   def delete_product(product_name)
-    #@product_name = product_name
-    #@driver.find_element(DELETE_PRODUCT).click
-    @driver.find_element(:xpath, "//section[@class='cart_goods cart-item-line']//article//p//a[contains(text(), '#{product_name}')]/../../../button[@class='cart__delete']").click
+    @driver.find_element(:xpath, "//a[contains(text(),'#{product_name}')]/../../../button[@class='cart__delete']").click
     sleep(IMPLICIT_WAIT)
+    CartProductPage.new
   end
 
   def check_total_price?(current_price)

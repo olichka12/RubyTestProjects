@@ -2,14 +2,11 @@ class SearchCategoryProductGridPage < HeadComponentPage
 
   PRODUCT_LIST = {id: 'list'}
   FILTER_PRICE = {class: 'dropdown-toggle btn__sorting'}
-  FILTER_PRICE_CHEAPER = {xpath: "//ul[@class='dropdown-menu sorting__menu']//li//a[contains(text(), 'за ціною (спочатку дешеві)')]"}
-  FILTER_PRICE_EXPENSIVE = {xpath: "//ul[@class='dropdown-menu sorting__menu']//li//a[contains(text(), 'за ціною (спочатку дорогі)')]"}
+  FILTER_PRICE_CHEAPER = {xpath: "//a[contains(text(), 'за ціною (спочатку дешеві)')]"}
+  FILTER_PRICE_EXPENSIVE = {xpath: "//a[contains(text(), 'за ціною (спочатку дорогі)')]"}
   PAGINATION = {class: 'pagination__list'}
   LAST_NUMBER_PAGES = {xpath: "//ul[@class='pagination__list']//li[last()]"}
-  #PAGINATION_LIST =
-  # PAGINATION_LIST =
   PRODUCT_CATEGORY_AMOUNT = {class: 'product-point'}
-
   PAGINATION_LIST = {class: 'pagination__link'}
   PRODUCT_CART = {class: 'to_cart btn_list_product-point '}
   PRODUCT_PRICE = {class: 'prise_description_product-point'}
@@ -33,30 +30,24 @@ class SearchCategoryProductGridPage < HeadComponentPage
   def filter_price_click
     @driver.find_element(FILTER_PRICE).click
     sleep(IMPLICIT_WAIT)
+    SearchCategoryProductGridPage.new
   end
 
   def select_filter_price(cheap_or_expensive)
     filter_price_click
     cheap_or_expensive == :cheap ? @driver.find_element(FILTER_PRICE_CHEAPER).click : @driver.find_element(FILTER_PRICE_EXPENSIVE).click
     sleep(IMPLICIT_WAIT)
+    SearchCategoryProductGridPage.new
   end
 
   def last_number_page
     @driver.find_element(LAST_NUMBER_PAGES).text.to_i
   end
 
-  def pagination_to_page(page)
-    @driver.find_elements(PAGINATION_LIST).select {|pagination| pagination.attribute('text') == "'#{page}'"}
-  end
-
   def pagination_list_click(page)
-    # @driver.find_element(tag_name: 'a').select { |el| el.attribute('title') == search_asd }
-
-    #pagination_to_page(page)[0].click
-
-
-    @driver.find_element(:xpath, "//ul[@class='pagination__list']//a[contains(text(),'#{page}')]").click
+    pagination_to_page(page)[0].click
     sleep(IMPLICIT_WAIT)
+    SearchCategoryProductGridPage.new
   end
 
   def product_category_amount
@@ -68,6 +59,7 @@ class SearchCategoryProductGridPage < HeadComponentPage
       @driver.find_elements(PRODUCT_CART)[product_number - 1].click
       sleep(IMPLICIT_WAIT)
     end
+    SearchCategoryProductGridPage.new
   end
 
   def product_name(product_number)
@@ -78,10 +70,14 @@ class SearchCategoryProductGridPage < HeadComponentPage
     @driver.find_elements(PRODUCT_PRICE)[product_number - 1].text.delete("^0-9").to_i
   end
 
+  def product_name_price(product_number)
+    [product_name(product_number) , product_price(product_number)]
+  end
+
   def cart_click
     @driver.find_element(CART).click
     sleep(IMPLICIT_WAIT)
-    #CartProductPage.new(@driver)
+    CartProductPage.new
   end
 
   def check_add_to_cart?(product_number)
@@ -124,5 +120,9 @@ class SearchCategoryProductGridPage < HeadComponentPage
     elsif criterion == :expensive
       product_price(product_number) <= price
     end
+  end
+
+  def pagination_to_page(page)
+    @driver.find_elements(PAGINATION_LIST).select {|pagination| pagination.attribute('text') == page.to_s }
   end
 end
