@@ -20,15 +20,15 @@ class HeadComponentPage
   end
 
   def search_input_click
-    @driver.find_element(SEARCH_INPUT).click
+    search_input_element.click
   end
 
   def search_input_clear
-    @driver.find_element(SEARCH_INPUT).clear
+    search_input_element.clear
   end
 
   def search_input_send_keys(search_value)
-    @driver.find_element(SEARCH_INPUT).send_keys(search_value)
+    search_input_element.send_keys(search_value)
   end
 
   def search_button_click
@@ -60,7 +60,7 @@ class HeadComponentPage
     @driver.find_element(CART_QUANTITY).text.to_i
   end
 
-  def found_logo
+  def site_logo
     @driver.find_element(LOGO)
   end
 
@@ -102,5 +102,10 @@ class HeadComponentPage
     search_button_click
     sleep(IMPLICIT_WAIT)
     SearchFirmPage.new
+  end
+
+  private
+  def search_input_element
+    @driver.find_element(SEARCH_INPUT)
   end
 end
