@@ -12,11 +12,11 @@ class Application
       @driver.get url
     end
 
-    def manage
+    def maximize_window
       @driver.manage.window.maximize
     end
 
-    def get
+    def head_page
       HeadComponentPage.new
     end
 
