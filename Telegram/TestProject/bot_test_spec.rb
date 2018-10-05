@@ -21,7 +21,49 @@ describe 'Testing Telegram Bot' do
 
   context 'Conversation' do
     it 'verifies thу error message that the token is invalid' do
-      expect(@telegram_bot.conversation(TOKEN_INVALID)).to include?(ERROR_TOKEN_INVALID)
+      expect(@telegram_bot.conversation(TOKEN_INVALID)).to include(ERROR_TOKEN_INVALID)
+    end
+  end
+
+  context 'Response' do
+    it 'verifies response with empty URL' do
+      @telegram_bot.response_json(URL_EMPTY)
+      expect(@telegram_bot.weather_message).to eq ERROR_WRONG_HTTP_REQUEST
+    end
+
+    it 'verifies response with integer URL' do
+      @telegram_bot.response_json(URL_INTEGER)
+      expect(@telegram_bot.weather_message).to eq ERROR_WRONG_HTTP_REQUEST
+    end
+
+    it 'verifies response with URL which without key' do
+      @telegram_bot.response_json(URL_WITHOUT_KEY)
+      expect(@telegram_bot.weather_message).to eq ERROR_WRONG_HTTP_REQUEST
+    end
+
+    it 'verifies response with correct URL' do
+      @telegram_bot.response_json(URL_CONSTANT)
+      expect(@telegram_bot.response[RESPONSE[:main]]).to eq RESPONSE_MAIN_CONSTANT
+    end
+
+    it 'verifies response about main information with correct URL' do
+      @telegram_bot.response_json(URL_CONSTANT)
+      expect(@telegram_bot.main).to eq RESPONSE_MAIN_CONSTANT
+    end
+
+    it 'verifies response about wind with correct URL' do
+      @telegram_bot.response_json(URL_CONSTANT)
+      expect(@telegram_bot.wind).to eq RESPONSE_WIND_CONSTANT
+    end
+
+    it 'verifies response about weather with correct URL' do
+      @telegram_bot.response_json(URL_CONSTANT)
+      expect(@telegram_bot.weather).to eq RESPONSE_WEATHER_CONSTANT
+    end
+
+    it 'verifies weather message with correct URL' do
+      @telegram_bot.response_json(URL_CONSTANT)
+      expect(@telegram_bot.weather_message).to eq WEATHER_MESSAGE_CONSTANT
     end
   end
 end

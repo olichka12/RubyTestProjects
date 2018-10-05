@@ -92,5 +92,5 @@ class TelegramBot
   end
 end
 
-bot = TelegramBot.new
-bot.conversation(TOKEN)
+# bot = TelegramBot.new
+# bot.conversation(TOKEN)
