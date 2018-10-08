@@ -66,4 +66,14 @@ describe 'Testing Telegram Bot' do
       expect(@telegram_bot.weather_message).to eq WEATHER_MESSAGE_CONSTANT
     end
   end
+
+  context 'Convert variables' do
+    it 'verifies that the temperature is correctly converted from fahrenheit to celsius' do
+      expect(@telegram_bot.temperature_to_celsius(FAHRENHEIT_TESTS_VARIABLES)).to eq CELSIUS_TESTS_VARIABLES
+    end
+
+    it 'verifies that the wind is correctly converted to kilometer per hour' do
+      expect(@telegram_bot.wind_to_km_hour(WIND_MILE_TESTS_VARIABLES)).to eq (WIND_KILOMETER_TESTS_VARIABLES)
+    end
+  end
 end

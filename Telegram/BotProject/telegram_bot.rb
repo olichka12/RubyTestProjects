@@ -1,10 +1,8 @@
 require 'telegram/bot'
-require 'pry'
-
 require_relative '../../Telegram/data'
 
 class TelegramBot
-  attr_accessor :response, :main, :coord, :weather, :wind, :clouds, :sys, :weather_message
+  attr_accessor :response, :main, :weather, :wind, :weather_message
 
   def conversation(token)
     begin
@@ -47,6 +45,14 @@ class TelegramBot
     @response.nil?? @weather_message = ERROR_WRONG_HTTP_REQUEST : response_parse
   end
 
+  def temperature_to_celsius(fahrenheit)
+    ((fahrenheit - FAHRENHEIT_COEFFICIENT) / TEMPERATURE_COEFFICIENT).to_i
+  end
+
+  def wind_to_km_hour(miles_hour)
+    (miles_hour * WIND_COEFFICIENT).to_i
+  end
+
   private
   def response_parse
     @main = @response[RESPONSE[:main]]
@@ -82,15 +88,7 @@ class TelegramBot
   def weather_description
     @weather[RESPONSE_WEATHER[:description]]
   end
-
-  def temperature_to_celsius(fahrenheit)
-    ((fahrenheit - FAHRENHEIT_COEFFICIENT) / TEMPERATURE_COEFFICIENT).to_i
-  end
-
-  def wind_to_km_hour(miles_hour)
-    (miles_hour * WIND_COEFFICIENT).to_i
-  end
 end
 
-# bot = TelegramBot.new
-# bot.conversation(TOKEN)
+bot = TelegramBot.new
+bot.conversation(TOKEN)
