@@ -1,4 +1,6 @@
 require 'telegram/bot'
+require 'pry'
+
 require_relative '../../Telegram/data'
 
 class TelegramBot
@@ -12,37 +14,49 @@ class TelegramBot
           when MESSAGE_START
             bot.api.send_message(chat_id: message.chat.id, text: hello_message(message.from.first_name))
           when MESSAGE_WEATHER
-            response_json(URL)
-            bot.api.send_message(chat_id: message.chat.id, text: @weather_message)
+            bot.api.send_message(chat_id: message.chat.id, text: QUESTION_WHICH_CITY)
+            bot.listen do |message|
+              city = message.text
+              response_json(URL + city + API_KEY)
+              bot.api.send_message(chat_id: message.chat.id, text: @weather_message)
+              break
+            end
           when MESSAGE_STOP
             bot.api.send_message(chat_id: message.chat.id, text:  bye_message(message.from.first_name))
+          else
+            bot.api.send_message(chat_id: message.chat.id, text:  MESSAGE_NOT_UNDERSTAND)
           end
         end
       end
     rescue Telegram::Bot::Exceptions::ResponseError => error
-      ERROR_TOKEN_INVALID << error.to_s
+      ERROR_TOKEN_INVALID + error.to_s
     end
   end
 
   def hello_message(user_name)
-    HELLO_STR << user_name << HELLO_EMOJI
+    HELLO_STR + user_name + HELLO_EMOJI
   end
 
   def bye_message(user_name)
-    BYE_STR << user_name
+    BYE_STR + user_name
   end
 
   def response_json(url)
     begin
       uri = URI(url)
       response = Net::HTTP.get(uri)
-      response.nil? || response.include?(ERROR_API_KEY) ? @response = nil : @response = JSON.parse(response)
+      if response.nil? || response.include?(ERROR_API_KEY)
+        @weather_message = ERROR_WRONG_HTTP_REQUEST
+        return
+      else
+        @response = JSON.parse(response)
+      end
     rescue StandardError => error
       @weather_message = ERROR_WRONG_HTTP_REQUEST
-      ERROR_WRONG_HTTP_REQUEST << error.to_s
+      ERROR_WRONG_HTTP_REQUEST + error.to_s
       return
     end
-    @response.nil?? @weather_message = ERROR_WRONG_HTTP_REQUEST : response_parse
+    @response[RESPONSE_NOT_FOUND[:cod]] == RESPONSE_CODE_NOT_FOUND ? @weather_message = ERROR_WRONG_INPUT_CITY : response_parse
   end
 
   def temperature_to_celsius(fahrenheit)
@@ -90,5 +104,5 @@ class TelegramBot
   end
 end
 
-bot = TelegramBot.new
-bot.conversation(TOKEN)
+# bot = TelegramBot.new
+# bot.conversation(TOKEN)
