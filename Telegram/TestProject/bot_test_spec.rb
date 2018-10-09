@@ -105,4 +105,26 @@ describe 'Testing Telegram Bot' do
       expect(@telegram_bot.wind_to_km_hour(WIND_MILE_TESTS_VARIABLES)).to eq (WIND_KILOMETER_TESTS_VARIABLES)
     end
   end
+
+  context 'Check variables' do
+    it 'verifies that 00 hour is in boundary' do
+      expect(@telegram_bot.check_hour(HOUR_BOUNDARIES[0])).to be
+    end
+
+    it 'verifies that 24 hour is not in boundary' do
+      expect(@telegram_bot.check_hour(HOUR_BOUNDARIES[1])).not_to be
+    end
+
+    it 'verifies that 00 minutes is in boundary' do
+      expect(@telegram_bot.check_minute(MINUTE_BOUNDARIES[0])).to be
+    end
+
+    it 'verifies that 60 minutes is not in boundary' do
+      expect(@telegram_bot.check_minute(MINUTE_BOUNDARIES[2])).not_to be
+    end
+
+    it 'verifies that time now equals the inputs time' do
+      expect(@telegram_bot.check_time_now(Time.now.strftime(HOUR_TEMPLATE).to_i + HOUR_COEFFICIENT, Time.now.strftime(MINUTE_TEMPLATE).to_i)).to be
+    end
+  end
 end
