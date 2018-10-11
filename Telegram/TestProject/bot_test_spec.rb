@@ -7,7 +7,7 @@ describe 'Testing Telegram Bot' do
     end
 
     it 'verifies that bot send message hello' do
-      expect(@greeting.hello_message(USER_NAME)).to eq HELLO_STR << USER_NAME << HELLO_EMOJI
+      expect(@greeting.hello_message(USER_NAME)).to include(HELLO_STR << USER_NAME << HELLO_EMOJI)
     end
 
     it 'verifies that bot send message bye' do
