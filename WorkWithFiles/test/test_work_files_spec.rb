@@ -1,6 +1,6 @@
 require 'rspec'
 require_relative '../../WorkWithFiles/features/CucumberProject/code/files'
-require '../data'
+require_relative '../data'
 
 describe 'Testing WFile class' do
 
