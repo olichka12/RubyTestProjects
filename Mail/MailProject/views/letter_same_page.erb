@@ -1,0 +1,16 @@
+<html>
+  <meta charset="UTF-8">
+  <head>
+    <title>Mail box</title>
+  </head>
+  <body>
+    <h1><%= lsubject.nil? ? "Немає теми" : "Subject:   " + lsubject %></h1>
+    <h2><%= "From:   " + lfrom%></h2>
+    <h2><%= "Date:   " + ldate%></h2>
+    <p><%= lbody.force_encoding('utf-8')%></p>
+    <br>
+    <form method="get" action="/">
+      <input type="submit" value="<- Back">
+    </form>
+  </body>
+</html>
