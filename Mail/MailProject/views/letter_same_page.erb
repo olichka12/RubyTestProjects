@@ -9,7 +9,7 @@
     <h2><%= "Date:   " + ldate%></h2>
     <p><%= lbody.force_encoding('utf-8')%></p>
     <br>
-    <form method="get" action="/">
+    <form method="get" action="/user_page/<%= user_name %>">
       <input type="submit" value="<- Back">
     </form>
   </body>

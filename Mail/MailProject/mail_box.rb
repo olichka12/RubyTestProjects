@@ -3,19 +3,25 @@ require_relative '../../Mail/data'
 require 'pry'
 
 class MailBox
-  attr_accessor :gmail, :information, :body, :date, :subject, :from
+  attr_accessor :gmail, :information, :body, :date, :subject, :from, :is_login
 
   def initialize
-    @gmail = Gmail.connect(USER_NAME, USER_PASSWORD)
     @information = {}
     @body = {}
     @date = {}
     @subject = {}
     @from = {}
+    @is_login = false
+  end
+
+  def login(user_name, user_password)
+    @gmail = Gmail.connect(user_name, user_password)
+    @is_login = @gmail.logged_in?
   end
 
   def logout
     @gmail.logout
+    @is_login = false
   end
 
   def letter_information(letter_state, number, read = false)
@@ -93,14 +99,14 @@ class MailBox
   def letter_other_find(categorize)
     key = KEY_START
     @gmail.inbox.find.each do |letter|
-      letter.header[categorize] ? @information[key += 1] = letter.header[categorize].decoded : nil
+      letter.header[categorize] ? @information[key += 1] = letter.header[categorize] : nil
     end
   end
 
   def letter_body_find
     key = KEY_START
     @gmail.inbox.find.each do |letter|
-      letter.text_part ? (@information[key += 1] = letter.text_part.body.decoded) : nil
+      letter.text_part ? (@information[key += 1] = letter.text_part) : nil
     end
   end
 
@@ -111,18 +117,19 @@ class MailBox
   def letter_state_other_find(letter_state, categorize)
     key = KEY_START
     @gmail.inbox.find(letter_state).each do |letter|
-      letter.header[categorize] ? @information[key += 1] = letter.header[categorize].decoded : nil
+      letter.header[categorize] ? @information[key += 1] = letter.header[categorize] : nil
     end
   end
 
   def letter_state_body_find(letter_state)
     key = KEY_START
     @gmail.inbox.find(letter_state).each do |letter|
-      letter.text_part ? (@information[key += 1] = letter.text_part.body.decoded) : nil
+      letter.text_part ? (@information[key += 1] = letter.text_part) : nil #.body.decoded
     end
   end
 end
 
 #  box = MailBox.new
-#  box.letter_information(LETTER_STATE[0])
+# box.login(USER_NAME, USER_PASSWORD)
+#  box.letter_information(LETTER_STATE[0], 0)
 # puts box.body[2]

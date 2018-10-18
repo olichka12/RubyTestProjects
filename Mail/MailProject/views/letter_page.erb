@@ -3,16 +3,16 @@
     <title>Mail box</title>
   </head>
   <body>
-  <h1><%= user_name %></h1>
+  <h1><%= user_name%></h1>
   <h2><%= letter_state%></h2>
   <% letters_subject.each do |number, subject| %>
-    <form method="get" action="/letter_same/<%= letter_state%>/<%= number%>">
-      <p><%= subject.nil? ? no_subject : subject %></p>
+    <form method="get" action="/<%= user_name%>/letter_same/<%= letter_state%>/<%= number.to_i%>">
+      <p><%= subject == "" ? no_subject : subject %></p>
       <input type="submit" value="Open">
       <br>
     </form>
   <% end %>
-  <form method="get" action="/">
+  <form method="get" action="/user_page/<%= user_name %>">
     <input type="submit" value="<- Back">
   </form>
   </body>

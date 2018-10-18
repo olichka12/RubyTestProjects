@@ -3,18 +3,13 @@
     <title>Mail box</title>
   </head>
   <body>
-  <h1><%= user_name %></h1>
-    <form method="get" action="/">
-      <form></form>
-      <form method="get" action="/letter/all">
-        <input type="submit" value="All letter(<%= all_count%>)" name="all_letter">
-      </form>
-      <form method="get" action="/letter/unread">
-        <input type="submit" value="Unread letter(<%= unread_count%>)" name="unread_letter">
-      </form>
-      <form method="get" action="/letter/read">
-        <input type="submit" value="Read letter(<%= read_count%>)" name="read_letter">
-      </form>
+    <h1>Log In</h1>
+    <form method="post" action="/start_page">
+      <p>Mail</p>
+      <input type="text" name="user_mail">
+      <p>Password</p>
+      <input type="text" name="user_password">
+      <input type="submit" value="Login">
     </form>
   </body>
 </html>

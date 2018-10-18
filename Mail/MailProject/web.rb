@@ -1,38 +1,49 @@
 require 'sinatra'
-require_relative 'mail_box'
+require_relative '../MailProject/mail_json_parse'
 require_relative '../../Mail/data'
 require 'pry'
 
-before do
-  @box = MailBox.new
-end
-
-after do
-  @box.logout
-end
-
 get '/' do
-  erb :start_page, :locals => {'user_name' => USER_NAME,
-                               'all_count' => @box.letter_count,
-                               'unread_count' => @box.letter_count(LETTER_STATE[0]),
-                               'read_count' => @box.letter_count(LETTER_STATE[1])
+  redirect to('/start_page')
+end
+
+get '/start_page' do
+    erb :start_page
+end
+
+post '/start_page' do
+  mail = MailJSON.new
+  mail.write_mail_json(params[:user_mail], params[:user_password])
+  mail.login ? (redirect to("/user_page/#{params[:user_mail]}")) : (redirect to('/start_page'))
+end
+
+get '/user_page/:user_name' do
+  mail = MailJSON.new
+  mail.count_mail_json
+  erb :user_page, :locals => {'user_name' => params[:user_name],
+                              'all_count' => mail.all_count,
+                              'unread_count' => mail.unread_count,
+                              'read_count' => mail.read_count
                               }
 end
 
-get '/letter/:letter_state' do
-  @box.letter_information(params[:letter_state], params[:letter_number])
-  erb :letter_page, :locals => {'user_name' => USER_NAME,
-                                'letter_state' => "#{params[:letter_state]}",
+get '/:user_name/letter/:letter_state' do
+  mail = MailJSON.new
+  mail.subject_mail_json(params[:letter_state])
+  erb :letter_page, :locals => {'user_name' => params[:user_name],
+                                'letter_state' => params[:letter_state],
                                 'no_subject' => LETTER_NO_SUBJECT,
-                                'letters_subject' => @box.subject
+                                'letters_subject' => mail.subject
                                 }
 end
 
-get '/letter_same/:letter_state/:letter_number' do
-  @box.letter_information(params[:letter_state].split(WHITESPACE)[0], params[:letter_number], true)
-  erb :letter_same_page, :locals => { 'lsubject' => @box.subject[params[:letter_number].to_i],
-                                      'lfrom' => @box.from[params[:letter_number].to_i],
-                                      'ldate' => @box.date[params[:letter_number].to_i],
-                                      'lbody' => @box.body[params[:letter_number].to_i]
+get '/:user_name/letter_same/:letter_state/:letter_number' do
+  mail = MailJSON.new
+  mail.letter_json(params[:letter_state], params[:letter_number])
+  erb :letter_same_page, :locals => { 'lsubject' => mail.subject[params[:letter_number]],
+                                      'lfrom' => mail.from[params[:letter_number]],
+                                      'ldate' => mail.date[params[:letter_number]],
+                                      'lbody' => mail.body[params[:letter_number]], #.to_obj.body.decoded,
+                                      'user_name' => params[:user_name]
                                     }
 end
