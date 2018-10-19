@@ -43,7 +43,7 @@ get '/:user_name/letter_same/:letter_state/:letter_number' do
   erb :letter_same_page, :locals => { 'lsubject' => mail.subject[params[:letter_number]],
                                       'lfrom' => mail.from[params[:letter_number]],
                                       'ldate' => mail.date[params[:letter_number]],
-                                      'lbody' => mail.body[params[:letter_number]], #.to_obj.body.decoded,
+                                      'lbody' => mail.body[params[:letter_number]],
                                       'user_name' => params[:user_name]
                                     }
 end

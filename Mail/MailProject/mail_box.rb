@@ -3,7 +3,7 @@ require_relative '../../Mail/data'
 require 'pry'
 
 class MailBox
-  attr_accessor :gmail, :information, :body, :date, :subject, :from, :is_login
+  attr_accessor :gmail, :information, :body, :date, :subject, :from, :is_login, :uid
 
   def initialize
     @information = {}
@@ -11,6 +11,7 @@ class MailBox
     @date = {}
     @subject = {}
     @from = {}
+    @uid = {}
     @is_login = false
   end
 
@@ -30,17 +31,20 @@ class MailBox
       letter_date(LETTER_STATE[0])
       letter_from(LETTER_STATE[0])
       letter_body(LETTER_STATE[0])
+      letter_uid(LETTER_STATE[0])
       letter_read(number) if read
     elsif letter_state.to_sym == LETTER_STATE[1]
       letter_subject(LETTER_STATE[1])
       letter_date(LETTER_STATE[1])
       letter_from(LETTER_STATE[1])
       letter_body(LETTER_STATE[1])
+      letter_uid(LETTER_STATE[1])
     else
       letter_subject
       letter_date
       letter_from
       letter_body
+      letter_uid
     end
   end
 
@@ -67,9 +71,28 @@ class MailBox
     end
   end
 
+  def letter_uid(letter_state = nil)
+    letter_state.nil? ? letter_uid_find_all : letter_uid_find(letter_state)
+    @uid = @information
+  end
+
+  def letter_uid_find(letter_state)
+    key = KEY_START
+    @gmail.inbox.find(letter_state).each do |letter|
+      @information[key += 1] = letter.uid
+    end
+  end
+
+  def letter_uid_find_all
+    key = KEY_START
+    @gmail.inbox.find.each do |letter|
+      @information[key += 1] = letter.uid
+    end
+  end
+
   def letter_body(letter_state = nil)
+    @body = {}
     letter_find(letter_state, LETTER_BODY)
-    @body = @information
   end
 
   def letter_subject(letter_state = nil)
@@ -106,7 +129,7 @@ class MailBox
   def letter_body_find
     key = KEY_START
     @gmail.inbox.find.each do |letter|
-      letter.text_part ? (@information[key += 1] = letter.text_part) : nil
+      letter.text_part ? (@body[key += 1] = letter.text_part.body.decoded.to_s.force_encoding('utf-8')) : nil
     end
   end
 
@@ -124,12 +147,7 @@ class MailBox
   def letter_state_body_find(letter_state)
     key = KEY_START
     @gmail.inbox.find(letter_state).each do |letter|
-      letter.text_part ? (@information[key += 1] = letter.text_part) : nil #.body.decoded
+      letter.text_part ? (@body[key += 1] = letter.text_part.body.decoded.to_s.force_encoding('utf-8')) : nil #.body.decoded,   body.decoded.force_encoding('utf-8')
     end
   end
 end
-
-#  box = MailBox.new
-# box.login(USER_NAME, USER_PASSWORD)
-#  box.letter_information(LETTER_STATE[0], 0)
-# puts box.body[2]

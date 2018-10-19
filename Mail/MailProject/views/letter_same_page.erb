@@ -4,10 +4,10 @@
     <title>Mail box</title>
   </head>
   <body>
-    <h1><%= lsubject.nil? ? "Немає теми" : "Subject:   " + lsubject %></h1>
+    <h1><%= lsubject == "" ? "Subject:  Немає теми" : "Subject:   " + lsubject %></h1>
     <h2><%= "From:   " + lfrom%></h2>
     <h2><%= "Date:   " + ldate%></h2>
-    <p><%= lbody.force_encoding('utf-8')%></p>
+    <p><%= lbody%></p>
     <br>
     <form method="get" action="/user_page/<%= user_name %>">
       <input type="submit" value="<- Back">

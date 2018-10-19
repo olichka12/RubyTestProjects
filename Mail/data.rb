@@ -11,4 +11,4 @@ KEY_START = 0
 
 JSON_FILE_NAME = 'mail_json.json'
 JSON_FILE_ACCESS = 'w'
-JSON_PARSE = [:count, :info]
+JSON_PARSE = [:count, :info, :uid]
