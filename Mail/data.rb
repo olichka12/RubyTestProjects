@@ -8,6 +8,7 @@ LETTER_STATE = [:unread, :read, :all]
 LETTER_NO_SUBJECT = 'Немає теми'
 WHITESPACE = ''
 KEY_START = 0
+EMPTY_STRING = nil
 
 JSON_FILE_NAME = 'mail_json.json'
 JSON_FILE_ACCESS = 'w'

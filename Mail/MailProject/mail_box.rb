@@ -1,6 +1,5 @@
 require 'gmail'
 require_relative '../../Mail/data'
-require 'pry'
 
 class MailBox
   attr_accessor :gmail, :information, :body, :date, :subject, :from, :is_login, :uid
@@ -25,14 +24,13 @@ class MailBox
     @is_login = false
   end
 
-  def letter_information(letter_state, number, read = false)
+  def letter_information(letter_state)
     if letter_state.to_sym == LETTER_STATE[0]
       letter_subject(LETTER_STATE[0])
       letter_date(LETTER_STATE[0])
       letter_from(LETTER_STATE[0])
       letter_body(LETTER_STATE[0])
       letter_uid(LETTER_STATE[0])
-      letter_read(number) if read
     elsif letter_state.to_sym == LETTER_STATE[1]
       letter_subject(LETTER_STATE[1])
       letter_date(LETTER_STATE[1])
@@ -59,18 +57,6 @@ class MailBox
   end
 
   private
-  def letter_read(number)
-    key = KEY_START
-    @letters = {}
-    @gmail.inbox.find(LETTER_STATE[0],:date => @date[number.to_i]) do |letter|
-      @letters[key += 1] = letter
-    end
-    @letters.invert
-    @gmail.inbox.find(:uid => @letters[number.to_i].uid) do |letter|
-      letter.read!
-    end
-  end
-
   def letter_uid(letter_state = nil)
     letter_state.nil? ? letter_uid_find_all : letter_uid_find(letter_state)
     @uid = @information
@@ -147,7 +133,7 @@ class MailBox
   def letter_state_body_find(letter_state)
     key = KEY_START
     @gmail.inbox.find(letter_state).each do |letter|
-      letter.text_part ? (@body[key += 1] = letter.text_part.body.decoded.to_s.force_encoding('utf-8')) : nil #.body.decoded,   body.decoded.force_encoding('utf-8')
+      letter.text_part ? (@body[key += 1] = letter.text_part.body.decoded.to_s.force_encoding('utf-8')) : nil
     end
   end
 end

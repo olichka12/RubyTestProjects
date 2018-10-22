@@ -1,7 +1,6 @@
 require 'sinatra'
 require_relative '../MailProject/mail_json_parse'
 require_relative '../../Mail/data'
-require 'pry'
 
 get '/' do
   redirect to('/start_page')
