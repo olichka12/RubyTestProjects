@@ -1,17 +1,17 @@
 class SearchCategoryProductGridPage < HeadComponentPage
 
   PRODUCT_LIST = {id: 'list'}
-  FILTER_PRICE = {class: 'dropdown-toggle btn__sorting'}
+  FILTER_PRICE = {css: '.dropdown-toggle.btn__sorting'}
   FILTER_PRICE_CHEAPER = {xpath: "//a[contains(text(), 'за ціною (спочатку дешеві)')]"}
   FILTER_PRICE_EXPENSIVE = {xpath: "//a[contains(text(), 'за ціною (спочатку дорогі)')]"}
-  PAGINATION = {class: 'pagination__list'}
+  PAGINATION = {css: '.pagination__list'}
   LAST_NUMBER_PAGES = {xpath: "//ul[@class='pagination__list']//li[last()]"}
-  PRODUCT_CATEGORY_AMOUNT = {class: 'product-point'}
-  PAGINATION_LIST = {class: 'pagination__link'}
-  PRODUCT_CART = {class: 'to_cart btn_list_product-point '}
-  PRODUCT_PRICE = {class: 'prise_description_product-point'}
+  PRODUCT_CATEGORY_AMOUNT = {css: '.product-point'}
+  PAGINATION_LIST = {css: '.pagination__link'}
+  PRODUCT_CART = {css: '.to_cart.btn_list_product-point '}
+  PRODUCT_PRICE = {css: '.prise_description_product-point'}
   PRODUCT_NAME = {xpath: "//article[@class='caption_description_product-point']//a"}
-  CART = {class: 'icon-cart'}
+  CART = {css: '.icon-cart'}
 
   attr_reader :driver
 

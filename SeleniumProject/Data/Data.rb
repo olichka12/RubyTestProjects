@@ -5,3 +5,4 @@ PRODUCT_NUMBER = 1
 URL = "https://kvshop.com.ua"
 CHEAP = :cheap
 EXPENSIVE = :expensive
+WINDOW_SIZE = 1200

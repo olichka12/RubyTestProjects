@@ -1,13 +1,13 @@
 class HeadComponentPage
-  LOGO = {class: 'logo col-lg-3 col-md-3 col-sm-3 col-xs-3'}
+  LOGO = {css: '.logo.col-lg-3.col-md-3.col-sm-3.col-xs-3'}
   SEARCH_INPUT = {name: 'q'}
-  SEARCH_BUTTON = {class: 'button-search'}
+  SEARCH_BUTTON = {css: '.button-search'}
   POSTPONED = {xpath: "//div[@class='wrapper-wishlist']//i"}
-  COMPARE = {class: 'icon-balance'}
+  COMPARE = {css: '.icon-balance'}
   COMPARE_QUANTITY = {id: 'compare-quantity'}
-  CART = {class: 'icon-cart'}
+  CART = {css: '.icon-cart'}
   CART_QUANTITY = {id: 'cart-quantity'}
-  CELL = {class: 'cell'}
+  CELL = {css: '.cell'}
   ARTICLE = {xpath: "//a[contains(text(),'Статті')]"}
   DELIVERY = {xpath: "//a[contains(text(),'Доставка')]"}
 

@@ -1,8 +1,8 @@
 class SearchFirmPage < HeadComponentPage
 
-  CONTAINER_RESULT = {class: 'm_bottom_30 m_xs_bottom_10 m_top_20'}
-  FOUNDED_ELEMENT = {class: 'm_bottom_5'}
-  ELEMENT = {class: 'v_align_base font5 color_main'}
+  CONTAINER_RESULT = {css: '.m_bottom_30.m_xs_bottom_10.m_top_20'}
+  FOUNDED_ELEMENT = {css: '.m_bottom_5'}
+  ELEMENT = {css: '.v_align_base.font5.color_main'}
 
   attr_reader :driver
 
