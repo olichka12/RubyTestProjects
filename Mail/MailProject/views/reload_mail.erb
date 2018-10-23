@@ -1,0 +1,14 @@
+<html>
+<head>
+  <title>Mail box</title>
+</head>
+<body>
+<h1>Reload</h1>
+<form method="post" action="/reload_page/<%= user_mail%>">
+  <p style="color:grey"><%= user_mail%></p>
+  <p>Password</p>
+  <input type="password" name="user_password">
+  <input type="submit" value="Reload">
+</form>
+</body>
+</html>

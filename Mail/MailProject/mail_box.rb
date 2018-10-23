@@ -21,7 +21,7 @@ class MailBox
 
   def logout
     @gmail.logout
-    @is_login = false
+    @is_login = @gmail.logged_in?
   end
 
   def letter_information(letter_state)

@@ -6,6 +6,10 @@ get '/' do
   redirect to('/start_page')
 end
 
+get '/reload_page/:user_name' do
+  erb :reload_mail, :locals => {'user_mail' => params[:user_name]}
+end
+
 get '/start_page' do
     erb :start_page
 end
@@ -14,6 +18,12 @@ post '/start_page' do
   mail = MailJSON.new
   mail.write_mail_json(params[:user_mail], params[:user_password])
   mail.login ? (redirect to("/user_page/#{params[:user_mail]}")) : (redirect to('/start_page'))
+end
+
+post '/reload_page/:user_name' do
+  mail = MailJSON.new
+  mail.write_mail_json(params[:user_name], params[:user_password])
+  mail.login ? (redirect to("/user_page/#{params[:user_name]}")) : (redirect to("/reload_page/#{params[:user_name]}"))
 end
 
 get '/user_page/:user_name' do
