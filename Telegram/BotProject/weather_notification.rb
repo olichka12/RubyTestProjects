@@ -4,7 +4,8 @@ class WeatherNotification < WeatherResponse
   attr_accessor :city_default, :telegram_bot
 
   def check_time_now(hour, minute)
-    Time.now.strftime(HOUR_TEMPLATE).to_i + HOUR_COEFFICIENT == hour.to_i && Time.now.strftime(MINUTE_TEMPLATE).to_i == minute.to_i ? true : false
+    Time.now.strftime(DAY_TEMPLATE) == DAY_TEMPLATE_STATE[0] || (Time.now.strftime(DAY_TEMPLATE) == DAY_TEMPLATE_STATE[1] && Time.now.strftime(HOUR_TEMPLATE).to_i == HOUR_COEFFICIENT) ? @hour = Time.now.strftime(HOUR_TEMPLATE).to_i : @hour = Time.now.strftime(HOUR_TEMPLATE).to_i + HOUR_COEFFICIENT
+    @hour == hour.to_i && Time.now.strftime(MINUTE_TEMPLATE).to_i == minute.to_i ? true : false
   end
 
   def check_hour(hour)

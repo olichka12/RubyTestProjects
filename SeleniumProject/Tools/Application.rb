@@ -10,7 +10,6 @@ class Application
 
     def get_url(url)
       @driver.get url
-      @driver.manage.timeouts.implicit_wait = 10
     end
 
     def maximize_window
