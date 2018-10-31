@@ -1,10 +1,10 @@
 class SearchProductGridPage < HeadComponentPage
-  DROPDOWN = {class: 'fa fa-angle-down drop_caret'}
-  DROPDOWN_CATEGORY = {class: 'item__drop-category'}
+  DROPDOWN = {css: '.fa.fa-angle-down.drop_caret'}
+  DROPDOWN_CATEGORY = {css: '.item__drop-category'}
   AMOUNT_ALL_PRODUCTS = {xpath: "//div[@class = 'quantity']"}
-  AMOUNT_PRODUCTS_PAGE = {class: 'product-point_grid col-lg-3 col-md-3 col-sm-3 col-xs-3 '}
+  AMOUNT_PRODUCTS_PAGE = {css: '.product-point_grid.col-lg-3.col-md-3.col-sm-3.col-xs-3 '}
   LAST_NUMBER_PAGES = {xpath: "//ul[@class='pagination__list']//li[last()]"}
-  PAGINATION_LIST = {class: 'pagination__link'}
+  PAGINATION_LIST = {css: '.pagination__link'}
   PRODUCT_GRID = {id: 'grid'}
 
   attr_accessor :count

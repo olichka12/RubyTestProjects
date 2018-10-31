@@ -1,8 +1,8 @@
 class CartProductPage < HeadComponentPage
 
   PRODUCT = {xpath: "//p[@class='cart__name_goods  cart__point']//a"}
-  TOTAL_PRICE = {class: 'wrap_general-total__num total_cart_amount'}
-  DELETE_PRODUCT = {class: 'cart__delete'}
+  TOTAL_PRICE = {css: '.wrap_general-total__num.total_cart_amount'}
+  DELETE_PRODUCT = {css: '.cart__delete'}
 
   attr_reader :driver
 

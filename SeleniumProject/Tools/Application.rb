@@ -5,7 +5,7 @@ require_relative '../../SeleniumProject/Tools/Pages/HeadComponentPage'
 class Application
   class << self
     def driver
-      @driver ||= Selenium::WebDriver.for(:safari)
+      @driver ||= Selenium::WebDriver.for :chrome
     end
 
     def get_url(url)
@@ -13,7 +13,7 @@ class Application
     end
 
     def maximize_window
-      @driver.manage.window.maximize
+     @driver.manage.window.resize_to(WINDOW_SIZE, WINDOW_SIZE)
     end
 
     def head_page
