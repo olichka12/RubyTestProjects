@@ -11,6 +11,12 @@ describe "Selenium tests to site 'https://kvshop.com.ua'" do
     Application.quit_application
   end
 
+  after(:each) do |example|
+    if example.exception
+      Capybara.current_session.save_and_open_screenshot
+    end
+  end
+
   it 'verifies that logo is present' do
     expect(Application.head_page.site_logo).to be
   end
