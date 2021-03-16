@@ -1,0 +1,1 @@
+REPORT_PATH=reports/$(date +%s) bundle exec rspec --format RspecHtmlReporter spec

@@ -1,25 +1,26 @@
-I, [2021-03-16T21:47:41.763699 #3484]  INFO -- : Searching product: Samsung-SM
-I, [2021-03-16T21:47:49.385502 #3484]  INFO -- : Searching category of product: Автотримачі
-I, [2021-03-16T21:47:57.199637 #3484]  INFO -- : Searching category of product: Автотримачі
-I, [2021-03-16T21:48:05.102350 #3484]  INFO -- : Searching firm of product: First
-I, [2021-03-16T21:48:12.921979 #3484]  INFO -- : Searching category of product: Автотримачі
-I, [2021-03-16T21:48:18.955883 #3484]  INFO -- : Cart quantity: 0
-I, [2021-03-16T21:59:33.191847 #4458]  INFO -- : Searching product: Samsung-SM
-I, [2021-03-16T21:59:40.691574 #4458]  INFO -- : Searching category of product: Автотримачі
-I, [2021-03-16T21:59:48.497007 #4458]  INFO -- : Searching category of product: Автотримачі
-I, [2021-03-16T21:59:56.048396 #4458]  INFO -- : Searching firm of product: First
-I, [2021-03-16T22:00:13.856589 #4458]  INFO -- : Searching category of product: Автотримачі
-I, [2021-03-16T22:00:19.896517 #4458]  INFO -- : Cart quantity: 0
-I, [2021-03-16T22:00:21.770044 #4458]  INFO -- : Searching category of product: Автотримачі
-I, [2021-03-16T22:00:32.220775 #4458]  INFO -- : Searching category of product: Автотримачі
-I, [2021-03-16T22:01:46.471627 #4575]  INFO -- : Searching product: Samsung-SM
-I, [2021-03-16T22:01:53.890001 #4575]  INFO -- : Searching category of product: Автотримачі
-I, [2021-03-16T22:02:01.291060 #4575]  INFO -- : Searching category of product: Автотримачі
-I, [2021-03-16T22:08:26.597838 #4940]  INFO -- : Searching product: Samsung-SM
-I, [2021-03-16T22:08:34.365593 #4940]  INFO -- : Searching category of product: Автотримачі
-I, [2021-03-16T22:08:42.081305 #4940]  INFO -- : Searching category of product: Автотримачі
-I, [2021-03-16T22:08:49.598406 #4940]  INFO -- : Searching firm of product: First
-I, [2021-03-16T22:08:57.400293 #4940]  INFO -- : Searching category of product: Автотримачі
-I, [2021-03-16T22:09:03.437805 #4940]  INFO -- : Cart quantity: 0
-I, [2021-03-16T22:09:05.087176 #4940]  INFO -- : Searching category of product: Автотримачі
-I, [2021-03-16T22:09:12.869168 #4940]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:05:16.296302 #56543]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:05:23.491559 #56543]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:06:07.039532 #56610]  INFO -- : Searching product: Samsung-SM
+I, [2021-03-17T00:06:14.372720 #56610]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:06:21.791195 #56610]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:06:29.030976 #56610]  INFO -- : Searching firm of product: First
+I, [2021-03-17T00:06:36.449306 #56610]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:06:42.482516 #56610]  INFO -- : Cart quantity: 0
+I, [2021-03-17T00:06:44.468292 #56610]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:06:51.753399 #56610]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:09:15.592957 #56776]  INFO -- : Searching product: Samsung-SM
+I, [2021-03-17T00:09:24.245610 #56776]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:09:31.831435 #56776]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:09:39.162805 #56776]  INFO -- : Searching firm of product: First
+I, [2021-03-17T00:09:46.435574 #56776]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:09:52.474185 #56776]  INFO -- : Cart quantity: 0
+I, [2021-03-17T00:09:53.770236 #56776]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:10:01.655745 #56776]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:19:30.572489 #58701]  INFO -- : Searching product: Samsung-SM
+I, [2021-03-17T00:19:58.577061 #58701]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:20:26.115797 #58701]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:20:54.253304 #58701]  INFO -- : Searching firm of product: First
+I, [2021-03-17T00:21:21.660619 #58701]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:21:27.756250 #58701]  INFO -- : Cart quantity: 0
+I, [2021-03-17T00:21:49.316551 #58701]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-17T00:22:16.772364 #58701]  INFO -- : Searching category of product: Автотримачі
