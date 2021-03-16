@@ -1,12 +1,11 @@
 require 'selenium-webdriver'
 require_relative '../../SeleniumProject/Data/Data'
-require_relative '../../SeleniumProject/Tools/Pages/HeadComponentPage'
+require_relative '../../SeleniumProject/tools/Pages/HeadComponentPage'
 
 class Application
   class << self
     def driver
-      @driver ||= Selenium::WebDriver.for(:safari)
-
+      @driver ||= Selenium::WebDriver.for(:chrome)
       # options = Selenium::WebDriver::Chrome::Options.new(args: ['headless'])
       # @driver ||= Selenium::WebDriver.for :chrome, options: options
     end
@@ -25,18 +24,6 @@ class Application
 
     def quit_application
       @driver.quit
-    end
-
-    # take screenshots immediately
-    def run
-      driver
-      begin
-        yield
-      rescue RSpec::Expectations::ExpectationNotMetError => error
-        puts error.message
-        @driver.save_screenshot "./#{Time.now.strftime("failshot__%d_%m_%Y__%H_%M_%S")}.png"
-      end
-      teardown
     end
   end
 end

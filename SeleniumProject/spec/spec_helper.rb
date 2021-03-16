@@ -1,20 +1,20 @@
-require_relative '../Tools/Application'
+require_relative '../tools/Application'
 require_relative '../../SeleniumProject/Data/Data'
-require_relative '../../SeleniumProject/Tools/Pages/HeadComponentPage'
-require_relative '../../SeleniumProject/Tools/Pages/SearchProductGridPage'
-require_relative '../../SeleniumProject/Tools/Pages/SearchCategoryProductGridPage'
-require_relative '../../SeleniumProject/Tools/Pages/SearchFirmPage'
-require_relative '../../SeleniumProject/Tools/Pages/CartProductPage'
+require_relative '../../SeleniumProject/tools/Pages/HeadComponentPage'
+require_relative '../../SeleniumProject/tools/Pages/SearchProductGridPage'
+require_relative '../../SeleniumProject/tools/Pages/SearchCategoryProductGridPage'
+require_relative '../../SeleniumProject/tools/Pages/SearchFirmPage'
+require_relative '../../SeleniumProject/tools/Pages/CartProductPage'
 require 'capybara/rspec'
 require 'capybara-screenshot/rspec'
 require 'capybara/dsl'
 
-Dir[File.dirname(__FILE__) + '/../page_object/*/*.rb'].each do |page_object|
+Dir[File.dirname(__FILE__) + '../spec'].each do |page_object|
   require page_object
 end
 
 Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(app, browser: :safari)
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
 Capybara.save_path = "#{Dir.pwd}/screenshots"

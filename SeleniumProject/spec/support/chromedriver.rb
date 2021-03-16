@@ -2,8 +2,6 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include Capybara::DSL
 
-  Capybara.server = :puma, { Silent: true }
-
   # Chrome non-headless driver
   Capybara.register_driver :chrome do |app|
     Capybara::Selenium::Driver.new(app, browser: :chrome)

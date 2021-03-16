@@ -1,3 +1,5 @@
+require_relative '../log_controller'
+
 class HeadComponentPage
   LOGO = {class: 'logo col-lg-3 col-md-3 col-sm-3 col-xs-3'}
   SEARCH_INPUT = {name: 'q'}
@@ -47,7 +49,9 @@ class HeadComponentPage
   end
 
   def compare_quantity
-    @driver.find_element(COMPARE_QUANTITY).text.to_i
+    compare_quantity = @driver.find_element(COMPARE_QUANTITY).text.to_i
+    LogController.instance.info("Compare quantity: #{compare_quantity}")
+    compare_quantity
   end
 
   def cart_click
@@ -57,7 +61,9 @@ class HeadComponentPage
   end
 
   def cart_quantity
-    @driver.find_element(CART_QUANTITY).text.to_i
+    cart_quantity = @driver.find_element(CART_QUANTITY).text.to_i
+    LogController.instance.info("Cart quantity: #{cart_quantity}")
+    cart_quantity
   end
 
   def site_logo
@@ -81,6 +87,7 @@ class HeadComponentPage
     search_input_click
     search_input_clear
     search_input_send_keys(search_product)
+    LogController.instance.info("Searching product: #{search_product}")
     search_button_click
     sleep(IMPLICIT_WAIT)
     SearchProductGridPage.new
@@ -90,6 +97,7 @@ class HeadComponentPage
     search_input_click
     search_input_clear
     search_input_send_keys(search_category_product)
+    LogController.instance.info("Searching category of product: #{search_category_product}")
     search_button_click
     sleep(IMPLICIT_WAIT)
     SearchCategoryProductGridPage.new
@@ -99,6 +107,7 @@ class HeadComponentPage
     search_input_click
     search_input_clear
     search_input_send_keys(search_firm_product)
+    LogController.instance.info("Searching firm of product: #{search_firm_product}")
     search_button_click
     sleep(IMPLICIT_WAIT)
     SearchFirmPage.new

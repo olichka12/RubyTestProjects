@@ -1,0 +1,25 @@
+I, [2021-03-16T21:47:41.763699 #3484]  INFO -- : Searching product: Samsung-SM
+I, [2021-03-16T21:47:49.385502 #3484]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-16T21:47:57.199637 #3484]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-16T21:48:05.102350 #3484]  INFO -- : Searching firm of product: First
+I, [2021-03-16T21:48:12.921979 #3484]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-16T21:48:18.955883 #3484]  INFO -- : Cart quantity: 0
+I, [2021-03-16T21:59:33.191847 #4458]  INFO -- : Searching product: Samsung-SM
+I, [2021-03-16T21:59:40.691574 #4458]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-16T21:59:48.497007 #4458]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-16T21:59:56.048396 #4458]  INFO -- : Searching firm of product: First
+I, [2021-03-16T22:00:13.856589 #4458]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-16T22:00:19.896517 #4458]  INFO -- : Cart quantity: 0
+I, [2021-03-16T22:00:21.770044 #4458]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-16T22:00:32.220775 #4458]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-16T22:01:46.471627 #4575]  INFO -- : Searching product: Samsung-SM
+I, [2021-03-16T22:01:53.890001 #4575]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-16T22:02:01.291060 #4575]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-16T22:08:26.597838 #4940]  INFO -- : Searching product: Samsung-SM
+I, [2021-03-16T22:08:34.365593 #4940]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-16T22:08:42.081305 #4940]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-16T22:08:49.598406 #4940]  INFO -- : Searching firm of product: First
+I, [2021-03-16T22:08:57.400293 #4940]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-16T22:09:03.437805 #4940]  INFO -- : Cart quantity: 0
+I, [2021-03-16T22:09:05.087176 #4940]  INFO -- : Searching category of product: Автотримачі
+I, [2021-03-16T22:09:12.869168 #4940]  INFO -- : Searching category of product: Автотримачі
