@@ -9,15 +9,11 @@ require 'capybara/rspec'
 require 'capybara-screenshot/rspec'
 require 'capybara/dsl'
 
-Dir[File.dirname(__FILE__) + '../spec'].each do |page_object|
-  require page_object
-end
-
 Capybara.register_driver :selenium do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
-Capybara.save_path = "#{Dir.pwd}/screenshots"
+Capybara.save_path = "../screenshots/"
 
 Capybara.default_driver = :selenium
 Capybara.app_host = URL
